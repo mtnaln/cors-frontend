@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#showButton").click(function(){
+    $.ajax({url: "http://localhost:8080/test/123", success: function(result){
+      $("#label").html(result);
+    }});
+  });
+  $("#showButton2").click(function(){
+    $.ajax({url: "http://localhost:8080/test2", success: function(result){
+      $("#label2").html(result);
+    }});
+  });
+  $("#showButton3").click(function(){
+    $.ajax({url: "http://localhost:8080/test3", success: function(result){
+      $("#label3").html(result);
+    }});
+  });
+  $("#showButton4").click(function(){
+    $.ajax({url: "http://localhost:8080/test4", success: function(result){
+      $("#label4").html(result);
+    }});
+  });
+});
+</script>
+</head>
+<body>
+
+<input type="button" id="showButton" value="Show Value For Test" />
+<input type="button" id="showButton2" value="Show Value For Test2" />
+<input type="button" id="showButton3" value="Show Value For Test3" />
+<input type="button" id="showButton4" value="Show Value For Test4" />
+
+<div><h1 id="label"></h1></div>
+<div><h1 id="label2"></h1></div>
+<div><h1 id="label3"></h1></div>
+<div><h1 id="label4"></h1></div>
+
+</body>
+</html>
